@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import Sidebar from "./navigation/sidebar";
+import Header from "./navigation/header";
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +22,24 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+
+    // help me code my <Header/> 
+
     return (
         <html lang="en">
-            <body className={monstserrat.className}>{children}</body>
+            <body className={monstserrat.className}>
+                {/* <main className="flex">
+                    <Sidebar />
+
+                    <div id="page_right" className="w-right">
+                        <Header />
+                        {children}
+                    </div>
+                </main> */}
+
+
+                {children}
+            </body>
         </html>
     );
 }

@@ -17,7 +17,7 @@ const config: Config = {
                 "primary" : "#2392ED"
             },
             width: {
-                "right": "calc(100% - 16rem)"
+                "right": "calc(100% - 18rem)"
             }
         },
     },
