@@ -2,8 +2,10 @@
 import Image from 'next/image';
 import LogoCodero from "../../../public/images/logo_codero2.png"
 import EyeIcon from '../../../public/icons/eye-icon';
+import EyeSlashIcon from '../../../public/icons/eye-slash-icon';
 
 export default function Login() {
+    
     return (
         <main id="login" className='flex flex-col justify-center min-h-[100vh]'>
             <div id="login_container" className='flex flex-col items-center gap-10'>
@@ -18,9 +20,13 @@ export default function Login() {
 
                     <div id="login_password_container" className='w-96 relative'>
                         <input type="password" placeholder='Password' className='shadow-sm shadow-gray-400 rounded-md pl-2 py-2 text-base bg-gray-200 w-full'/>
-                        <div className='absolute top-0 right-0 py-2 pr-2'>
-                            <button>
-                                <EyeIcon className='text-gray-400'/>
+                        <div className='absolute top-0 right-0 py-2 mr-2'>
+                            <button id='eye_enabled' className='group hidden'>
+                                <EyeIcon className='text-gray-400 group-hover:text-primary duration-500'/>
+                            </button>
+
+                            <button id="eye_disabled" className='group'>
+                                <EyeSlashIcon className='text-gray-400 group-hover:text-primary duration-300'/>
                             </button>
                         </div>
                     </div>
