@@ -95,7 +95,6 @@ export default function Sidebar() {
                         <NotificationIcon className="text-gray-400 group-hover:text-primary duration-300"/>
                         <a href="" className="text-base font-semibold text-gray-400 tracking-wide group-hover:text-primary group-hover:underline duration-300 w-32 ml-4"> Notification </a>
                         <ArrowDownSidebar className="text-gray-400 mt-1 group-hover:text-primary group-hover:rotate-180 duration-500"/>
-
                     </div>
                 </div>
             </div>
