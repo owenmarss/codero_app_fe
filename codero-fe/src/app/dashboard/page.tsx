@@ -8,7 +8,7 @@ export default function Dashboard() {
     return (
         <main id="dashboard" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="dashboard_title">
-                <h1 className="text-2xl font-semibold text-primary"> Home </h1>
+                <h1 className="text-2xl font-bold text-primary tracking-wide"> Home </h1>
             </div>
 
             <div id="dashboard_card" className="grid grid-cols-4 gap-x-4 gap-y-4">
@@ -132,14 +132,49 @@ export default function Dashboard() {
                         <a href="" className="flex items-center gap-5">
                             <EnvelopeIcon className="text-black group-hover:text-white w-[7%]" />
 
-                            <h1 className="font-bold text-sm w-[15%] group-hover:text-white"> HRD Codero </h1>
-                            <h1 className="font-regular text-sm w-[15%] group-hover:text-white"> 26 April 2024 </h1>
-                            <h1 className="font-semibold text-sm w-[20%] group-hover:text-white"> Subject Subject </h1>
-                            <h1 className="font-light text-gray-500 text-sm truncate w-[43%] pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white truncate"> HRD Codero </h1>
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white"> 26 April 2024 </h1>
+                            <h1 className="font-semibold text-sm w-[30%] truncate group-hover:text-white"> Subject Subject Subject Subject </h1>
+                            <h1 className="font-light text-gray-500 text-sm truncate w-[33%] pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
                         </a>
                     </div>
 
                     <div id="dashboard_inbox_message" className="bg-gray-200 py-3 rounded-lg group hover:bg-[#70C0F9] shadow-sm shadow-slate-400 duration-300">
+                        <a href="" className="flex items-center gap-5">
+                            <EnvelopeIcon className="text-black group-hover:text-white w-[7%]" />
+
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white truncate"> Singgih Agus </h1>
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white"> 26 April 2024 </h1>
+                            <h1 className="font-semibold text-sm w-[30%] truncate group-hover:text-white"> Subject Subject Subject Subject </h1>
+                            <h1 className="font-light text-gray-500 text-sm truncate w-[33%] pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
+                        </a>
+                    </div>
+
+                    <div id="dashboard_inbox_message" className="bg-gray-200 py-3 rounded-lg group hover:bg-[#70C0F9] shadow-sm shadow-slate-400 duration-300">
+                        <a href="" className="flex items-center gap-5">
+                            <EnvelopeIcon className="text-black group-hover:text-white w-[7%]" />
+
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white truncate"> Arif Puji Wahiramar </h1>
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white"> 26 April 2024 </h1>
+                            <h1 className="font-semibold text-sm w-[30%] truncate group-hover:text-white"> Subject Subject Subject Subject </h1>
+                            <h1 className="font-light text-gray-500 text-sm truncate w-[33%] pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
+                        </a>
+                    </div>
+
+                    <div id="dashboard_inbox_message" className="bg-gray-200 py-3 rounded-lg group hover:bg-[#70C0F9] shadow-sm shadow-slate-400 duration-300">
+                        <a href="" className="flex items-center gap-5">
+                            <EnvelopeIcon className="text-black group-hover:text-white w-[7%]" />
+
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white truncate"> Muhammad Rizky </h1>
+                            <h1 className="font-semibold text-sm w-[15%] group-hover:text-white"> 26 April 2024 </h1>
+                            <h1 className="font-semibold text-sm w-[30%] truncate group-hover:text-white"> Subject Subject Subject Subject </h1>
+                            <h1 className="font-light text-gray-500 text-sm truncate w-[33%] pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
+                        </a>
+                    </div>
+
+
+
+                    {/* <div id="dashboard_inbox_message" className="bg-gray-200 py-3 rounded-lg group hover:bg-[#70C0F9] shadow-sm shadow-slate-400 duration-300">
                         <a href="" className="flex items-center gap-5">
                             <EnvelopeIcon className="text-black group-hover:text-white w-1/4" />
 
@@ -157,7 +192,7 @@ export default function Dashboard() {
                             <h1 className="font-regular text-sm w-3/4 group-hover:text-white"> 26 April 2024 </h1>
                             <h1 className="font-regular text-sm truncate w-4/4 pr-5 group-hover:text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, maxime. Voluptate voluptatem reprehenderit perferendis fuga dicta recusandae quibusdam laboriosam, consectetur maiores officiis asperiores totam quisquam laudantium quae aut. Officiis, optio! </h1>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div id="dashboard_inbox_link" className="flex justify-end mt-1">

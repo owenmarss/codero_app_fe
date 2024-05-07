@@ -7,7 +7,7 @@ export default function Activity() {
     return (
         <main id="activity" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="activity_title">
-                <h1 className="text-2xl font-bold text-primary"> Activity </h1>
+                <h1 className="text-2xl font-bold text-primary tracking-wide"> Activity </h1>
             </div>
 
             <div id="activity_content" className="grid grid-cols-2 gap-y-10">
@@ -109,7 +109,7 @@ export default function Activity() {
                         </div>
 
                         <div id="activity_absensi_transport_on_progress" className="flex items-center">
-                            <h1 className="text-sm text-white w-4/6"> Transpor <b>(April 2024)</b>t: </h1>
+                            <h1 className="text-sm text-white w-4/6"> Transpor <b>(April 2024)</b>: </h1>
                             <b className="text-sm text-white font-bold"> Rp 188.000,00 </b>
                         </div>
                     </div>
