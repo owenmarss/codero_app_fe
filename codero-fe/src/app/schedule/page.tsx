@@ -5,7 +5,7 @@ export default function schedule() {
                 <h1 className="text-2xl font-bold text-primary tracking-wide"> Schedule </h1>
             </div>
 
-            <div id="schedule_filter" className="flex justify-between items-center pb-2 ">
+            <div id="schedule_filter" className="flex justify-between items-center pb-2">
                 <div id="schedule_filter_day" className="flex justify-between items-center gap-4">
                     <h2 className="text-lg font-semibold text-black"> Hari: </h2>
                     <select className="text-base text-gray-500 bg-gray-200 rounded-md pl-2 pr-10 py-2">

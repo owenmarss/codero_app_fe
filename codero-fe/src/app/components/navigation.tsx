@@ -11,18 +11,30 @@ import HamburgerIcon from "../../../public/icons/hamburger-icon";
 import UserIcon from "../../../public/icons/user-icon";
 import ArrowDownHeader from "../../../public/icons/arrow-down-header";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navigation({
     children,
 }: Readonly<{
-    children: React.ReactNode;
-}>) {
+    children: React.ReactNode;}>) {
     const [sidebarVisible, setSidebarVisible] = useState(true);
 
     const [profileVisible, setProfileVisible] = useState(false);
 
+    const pathname = usePathname();
+    const noLayout = ['/login', '/register'];
+
+    if (noLayout.includes(pathname)) {
+        return (
+            <>
+                {children}
+            </>
+        );
+    }
+
     return (
         <main className="flex">
+            {/* Sidebar */}
             <aside
                 id="sidebar"
                 className={`w-72 min-h-[100vh] bg-black flex-col gap-[72px] pb-16 ${sidebarVisible ? "flex" : "hidden"}`}

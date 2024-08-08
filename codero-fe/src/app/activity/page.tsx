@@ -109,7 +109,7 @@ export default function Activity() {
                         </div>
 
                         <div id="activity_absensi_transport_on_progress" className="flex items-center">
-                            <h1 className="text-sm text-white w-4/6"> Transpor <b>(April 2024)</b>: </h1>
+                            <h1 className="text-sm text-white w-4/6"> Transport <b>(April 2024)</b>: </h1>
                             <b className="text-sm text-white font-bold"> Rp 188.000,00 </b>
                         </div>
                     </div>

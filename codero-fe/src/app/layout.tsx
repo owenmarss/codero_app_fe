@@ -1,9 +1,8 @@
-// "use client"
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./navigation/header";
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { UserIcon } from "../../public/icons/icons";
 
 
@@ -28,9 +27,7 @@ export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
-}>) {    
-    // help me code my <Header/> 
-    // const [sidebarVisible, setSidebarVisible] = useState(false);
+}>) {
     return (
         <html lang="en">
             <body className={monstserrat.className}>

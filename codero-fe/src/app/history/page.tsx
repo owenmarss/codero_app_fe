@@ -346,8 +346,6 @@ export default function History() {
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> 30 km </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> Rp 40.000 </td>
                                 </tr>
-
-
                             </tbody>
                         </table>
                     </div>

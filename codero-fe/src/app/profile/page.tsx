@@ -69,6 +69,13 @@ export default function Profile() {
                             disabled={true}
                             className="text-base text-gray-400 border border-gray-300 rounded-md p-2 w-1/2 bg-transparent" 
                         >
+                            {/* if (gender=="Pria") {
+                                <option value="Pria" selected> Pria </option>
+                                <option value="Wanita"> Wanita </option>
+                            } else {
+                                <option value="Pria"> Pria </option>
+                                <option value="Wanita" selected> Wanita </option>
+                            } */}
                             <option value="Pria"> Pria </option>
                             <option value="Pria"> Wanita </option>
                         </select>
