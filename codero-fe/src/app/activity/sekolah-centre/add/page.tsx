@@ -1,28 +1,34 @@
 "use client";
+// import { cookies } from 'next/headers';
 
 export default function AddSekolahCentre() {
+    // const cookieStore = cookies();
+    // const token = cookieStore.get('token'); // Replace 'token' with your actual cookie name
+
     const handleSubmit = async (e:any) => {
-        e.preventDefault();
+        e.preventDefault();        
         
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        const res = await fetch('http://localhost:3000/api/sekolah-centre', {
+        const res = await fetch('http://127.0.0.1:8000/api/schoolcentres', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                // 'Authorization': `Bearer ${token?.value}` // Ensure you are passing the value of the cookie
             },
             cache: 'no-cache',
             body: JSON.stringify({data}),
         });
 
         if (res.ok) {
-            // Redirect or show success message
-            window.location.href = '/activity/sekolah-centre';
+            // * Redirect or show success message
+            window.location.href = '/activity/sekolah-centre'; // TODO: Sementara sebelum pakai middleware
         } else {
             // Handle error
             alert('Error: Failed to add Sekolah/Centre');
             console.log(res);
+            console.log(data);
         }
 
     }

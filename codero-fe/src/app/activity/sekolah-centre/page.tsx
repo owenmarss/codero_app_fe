@@ -1,8 +1,21 @@
+import { cookies } from 'next/headers';
+
 export default async function SekolahCentre() {
-    const res = await fetch('http://127.0.0.1:8000/api/schoolcentres', {cache: 'force-cache', next:{revalidate: 60}});
-    // {cache: 'no-cache', next:{revalidate: 60}} -> to not cache the data
+    const cookieStore = cookies();
+    const token = cookieStore.get('token'); // Replace 'token' with your actual cookie name
+
+    const res = await fetch('http://127.0.0.1:8000/api/schoolcentres', {
+        cache: 'no-cache',
+        headers: {
+            'Authorization': `Bearer ${token?.value}` // Ensure you are passing the value of the cookie
+        }
+    });
+
     const data = await res.json();
-    // console.log(data);
+
+    if (!res.ok) {
+        return <div>Failed to fetch data</div>;
+    }
 
     return (
         <main id="sekolah-centre" className="pt-7 pb-10 px-6 flex flex-col gap-5">
@@ -54,7 +67,7 @@ export default async function SekolahCentre() {
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Kelas </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Tipe Materi </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Materi </th>
-                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={2}> Action </th>
+                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={4}> Action </th>
                             </tr>
                         </thead>
 
@@ -71,7 +84,7 @@ export default async function SekolahCentre() {
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.tipeMateri} </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.materi} </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5">
-                                        <a href={`/sekolah-centre/info-${item.id}`} className="text-primary hover:text-secondary">
+                                        <a href="/activity/sekolah-centre/info" className="text-primary hover:text-secondary">
                                             Lihat Sekolah
                                         </a>
                                     </td>
@@ -79,6 +92,18 @@ export default async function SekolahCentre() {
                                         <a href={`/sekolah-centre/student-list-${item.id}`} className="text-primary hover:text-secondary">
                                             Absensi Murid
                                         </a>
+                                    </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5">
+                                        <a href={`/activity/sekolah-centre/edit-${item.id}`} className="text-primary hover:text-secondary">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5">
+                                        <form action="">
+                                            <button type="submit" className="text-primary hover:text-secondary">
+                                                Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>   
                             ))}

@@ -62,7 +62,7 @@ export default function schedule() {
                             </div>
 
                             <div id="schedule_list_action_2">
-                                <a href="" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
+                                <a href="/activity/resources" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
                             </div>
 
                             <div id="schedule_list_action_3">
@@ -108,7 +108,7 @@ export default function schedule() {
                             </div>
 
                             <div id="schedule_list_action_2">
-                                <a href="" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
+                                <a href="/activity/resources" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
                             </div>
 
                             <div id="schedule_list_action_3">
@@ -155,7 +155,7 @@ export default function schedule() {
                             </div>
 
                             <div id="schedule_list_action_2">
-                                <a href="" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
+                                <a href="/activity/resources" className="text-xs text-primary font-regular hover:underline hover:text-secondary duration-500 tracking-wider"> Resources </a>
                             </div>
 
                             <div id="schedule_list_action_3">
@@ -168,41 +168,3 @@ export default function schedule() {
         </main>
     );
 };
-
- {/* <div id="schedule_list_content" className="flex flex-col">
-    <div id="schedule_list_top" className="flex justify-between items-center">
-        <div id="schedule_list_timeline" className="flex flex-col w-[45%]">
-            <div id="schedule_list_day" >
-                <h2 className="text-lg font-semibold text-black"> Senin </h2>
-            </div>
-
-            <div id="schedule_list_time">
-                <h3 className="text-base text-black"> 08:00 - 10:00 </h3>
-            </div>
-        </div>
-
-        <div id="schedule_list_location" className="flex flex-col items-end w-[45%]">
-            <div id="schedule_list_school_centre">
-                <h2 className="text-lg font-bold text-primary"> SD Global Insani Islamic School </h2>
-            </div>
-
-            <div id="schedule_list_address">
-                <h3 className="text-base font-light text-gray-600"> Jl. Harapan Indah Raya, Bekasi </h3>
-            </div>
-        </div>
-    </div>
-
-    <div id="schedule_list_bottom" className="flex justify-end gap-5">
-        <div id="schedule_list_action_1">
-            <a href="" className="text-xs text-primary font-regular hover:underline"> Lihat Sekolah/Centre </a>
-        </div>
-
-        <div id="schedule_list_action_2">
-            <a href="" className="text-xs text-primary font-regular hover:underline"> Resources </a>
-        </div>
-
-        <div id="schedule_list_action_3">
-            <a href="" className="text-xs text-primary font-regular hover:underline"> Data Murid </a>
-        </div>
-    </div>
-</div> */}

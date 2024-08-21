@@ -6,7 +6,7 @@ export default function Profile() {
     return (
         <main id="profile" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="profile_title">
-                <h1 className="text-2xl font-semibold text-primary"> Profile </h1>
+                <h1 className="text-2xl font-bold text-primary"> Profile </h1>
             </div>
 
             <div id="profile_content" className="flex flex-col gap-5">

@@ -92,12 +92,15 @@ export default function Notification() {
                         <PaginationLeft className="text-black group-hover:text-primary duration-300"/>
                     </button>
 
-                    <div id="notification_page_button" className="flex gap-2">
-                        <button className="text-black font-bold border-[1.5px] border-transparent rounded-full py-2 px-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 1 </button>
-                        <button className="text-black font-bold border-[1.5px] border-transparent rounded-full py-2 px-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 2 </button>
-                        <button className="text-black font-bold border-[1.5px] border-transparent rounded-full py-2 px-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 3 </button>
-                        <button className="text-black font-bold border-[1.5px] border-transparent rounded-full py-2 px-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 4 </button>
-                        <button className="text-black font-bold border-[1.5px] border-transparent rounded-full py-2 px-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 5 </button>
+                    <div id="notification_page_button" className="flex gap-4">
+                        <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:underline decoration-2 underline-offset-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 1 </button>
+                        <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:underline decoration-2 underline-offset-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 2 </button>
+                        <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:underline decoration-2 underline-offset-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 3 </button>
+                        <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:underline decoration-2 underline-offset-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 4 </button>
+                        <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:underline decoration-2 underline-offset-4 hover:bg-primary hover:border-primary hover:text-white duration-300"> 5 </button>
+                        {/* <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:bg-primary hover:border-primary hover:text-white duration-300"> 11 </button> */}
+                        {/* <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:bg-primary hover:border-primary hover:text-white duration-300"> 225 </button> */}
+                        {/* <button className="text-black text-base font-bold border-[1.5px] border-transparent rounded-full w-10 h-10 hover:bg-primary hover:border-primary hover:text-white duration-300"> 2250 </button> */}
                     </div>
 
                     <button className="group ml-5">

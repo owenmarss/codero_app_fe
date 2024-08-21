@@ -34,7 +34,7 @@ export default function Activity() {
                     </div>
 
                     <div id="activity_assignment_link" className="flex justify-end pt-10">
-                        <a href="/activity/assignment" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Assignment </a>
+                        <a href="/activity/assignment" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Assignment... </a>
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@ export default function Activity() {
                     </div>
 
                     <div id="activity_resources_link" className="flex justify-end pt-10">
-                        <a href="/activity/resources" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Resources </a>
+                        <a href="/activity/resources" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Resources... </a>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function Activity() {
                     </div>
 
                     <div id="activity_sekolah_centre_link" className="flex justify-end pt-10">
-                        <a href="/activity/sekolah-centre" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Sekolah & Centre </a>
+                        <a href="/activity/sekolah-centre" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Lihat Semua Sekolah & Centre... </a>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@ export default function Activity() {
                     <div id="activity_absensi_transport_top" className="flex items-center justify-between">
                         <div id="activity_absensi_transport_top_left"> 
                             <h1 className="text-base font-bold text-white"> Absensi & Transport </h1>
-                            <h1 className="text-sm text-gray-400 font-regular text-white"> Data Absen & Transport </h1>
+                            <h1 className="text-sm text-gray-400 font-regular text-white"> Data Absensi & Transport </h1>
                         </div>
                         
                         <RocketLaunch className="text-white"/>
@@ -115,7 +115,7 @@ export default function Activity() {
                     </div>
 
                     <div id="activity_absensi_transport_link" className="flex justify-end pt-10">
-                        <a href="/activity/absensi-transport" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Isi Absensi & Transport </a>
+                        <a href="/activity/absensi-transport/absensi" className="text-white text-xs tracking-wide hover:underline hover:text-white duration-300"> Isi Absensi & Transport... </a>
                     </div>
                 </div>
             </div>

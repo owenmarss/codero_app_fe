@@ -18,7 +18,6 @@ export default function Navigation({
 }: Readonly<{
     children: React.ReactNode;}>) {
     const [sidebarVisible, setSidebarVisible] = useState(true);
-
     const [profileVisible, setProfileVisible] = useState(false);
 
     const pathname = usePathname();
