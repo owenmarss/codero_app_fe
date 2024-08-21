@@ -1,8 +1,19 @@
 import { cookies } from 'next/headers';
+import jwt from 'jsonwebtoken';
 
 export default async function SekolahCentre() {
     const cookieStore = cookies();
     const token = cookieStore.get('token'); // Replace 'token' with your actual cookie name
+
+    let posisi: string | null = null;
+    if (token?.value) {
+        try {
+            const decodedToken: any = jwt.decode(token.value);
+            posisi = decodedToken?.posisi || null;
+        } catch (error) {
+            console.error('Failed to decode token:', error);
+        }
+    }
 
     const res = await fetch('http://127.0.0.1:8000/api/schoolcentres', {
         cache: 'no-cache',
@@ -67,12 +78,12 @@ export default async function SekolahCentre() {
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Kelas </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Tipe Materi </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Materi </th>
-                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={4}> Action </th>
+                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) ? 4 : 3}> Action </th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            {data.map((item:any, index:any) => (
+                            {data.map((item: any, index: any) => (
                                 <tr key={item.id} className="text-center text-xs hover:bg-gray-200 duration-300">
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {index + 1} </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.nama} </td>
@@ -93,18 +104,22 @@ export default async function SekolahCentre() {
                                             Absensi Murid
                                         </a>
                                     </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5">
-                                        <a href={`/activity/sekolah-centre/edit-${item.id}`} className="text-primary hover:text-secondary">
-                                            Edit
-                                        </a>
-                                    </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5">
-                                        <form action="">
-                                            <button type="submit" className="text-primary hover:text-secondary">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </td>
+                                    {posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) && (
+                                        <>
+                                            <td className="shadow py-3 border-b border-gray-150 px-5">
+                                                <a href={`/activity/sekolah-centre/edit-${item.id}`} className="text-primary hover:text-secondary">
+                                                    Edit
+                                                </a>
+                                            </td>
+                                            <td className="shadow py-3 border-b border-gray-150 px-5">
+                                                <form action="">
+                                                    <button type="submit" className="text-primary hover:text-secondary">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </>
+                                    )}
                                 </tr>   
                             ))}
                         </tbody>
@@ -120,6 +135,5 @@ export default async function SekolahCentre() {
                 </div>
             </div>
         </main>
-    )
-};
-
+    );
+}
