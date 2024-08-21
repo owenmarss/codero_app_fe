@@ -87,7 +87,7 @@ export default function Navigation({
                         <div id="profile_dropdown" className={`w-40 flex flex-col absolute bg-gray-100 right-0 top-0 mt-10 rounded z-10 shadow-md drop-shadow-md rounded-lg border border-gray-300   ${profileVisible ? "flex" : "hidden"}`}>
                             <a href="/profile" className="pl-2.5 py-2 border-b border-gray-300 font-medium hover:bg-gray-200 hover:underline duration-300"> User Profile </a>
                             <a href="/notification" className="pl-2.5 py-2 border-b border-gray-300 font-medium hover:bg-gray-200 hover:underline duration-300"> Notification </a>
-                            <a href="" className="pl-2.5 py-2 text-red-600 font-medium hover:bg-gray-200 hover:underline duration-300"> Logout </a>
+                            <a href="/logout" className="pl-2.5 py-2 text-red-600 font-medium hover:bg-gray-200 hover:underline duration-300"> Logout </a>
                         </div>
                     </div>
                 </main>
