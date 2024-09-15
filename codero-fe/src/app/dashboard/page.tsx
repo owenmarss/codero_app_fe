@@ -4,7 +4,13 @@ import PenIcon from "../../../public/icons/pen-icon";
 import RocketLaunch from "../../../public/icons/rocket-launch";
 import Schedule2Icon from "../../../public/icons/schedule2-icon";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+    const res = await fetch("/api/getOneUser", {
+        method: "GET",
+    });
+    console.log(res);
+    
+
     return (
         <main id="dashboard" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="dashboard_title">
@@ -123,7 +129,7 @@ export default function Dashboard() {
 
             <div id="dashboard_inbox" className="flex flex-col pt-5 gap-5">
                 <div id="dashboard_inbox_title" className="w-fit">
-                    <h1 className="text-2xl font-semibold text-black"> Inbox </h1>
+                    <h1 className="text-2xl font-semibold text-black"> Message </h1>
                     <div className="bg-secondary w-full h-1.5">  </div>
                 </div>
 

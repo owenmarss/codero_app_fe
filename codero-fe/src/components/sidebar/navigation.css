@@ -1,0 +1,7 @@
+.blur-background {
+    filter: blur(5px);
+}
+
+#logout_popup {
+    filter: none;
+}

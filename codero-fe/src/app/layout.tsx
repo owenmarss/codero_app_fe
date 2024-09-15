@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import Header from "./navigation/header";
-import { use, useState } from 'react';
-import { UserIcon } from "../../public/icons/icons";
 
-
-import { SIDENAV_ITEMS } from "./data/sidebar";
-import DropdownLink from "./components/dropdown-link";
-import Navigation from "./components/navigation";
-
+import Navigation from "../components/sidebar/navigation"
 
 const inter = Inter({ subsets: ["latin"] });
 
-const monstserrat = Montserrat({
+const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ['300', '400', '500', '600', '700']
 })
@@ -30,7 +23,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={monstserrat.className}>
+            <body className={montserrat.className}>
                 <Navigation>
                     {children}
                 </Navigation>

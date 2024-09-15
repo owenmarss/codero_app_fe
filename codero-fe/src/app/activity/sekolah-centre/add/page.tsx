@@ -30,7 +30,6 @@ export default function AddSekolahCentre() {
             console.log(res);
             console.log(data);
         }
-
     }
 
     return (

@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
+import PenIcon from '../../../../public/icons/pen-icon';
 
 export default async function SekolahCentre() {
     const cookieStore = cookies();
@@ -9,8 +10,10 @@ export default async function SekolahCentre() {
     if (token?.value) {
         try {
             const decodedToken: any = jwt.decode(token.value);
-            posisi = decodedToken?.posisi || null;
-        } catch (error) {
+            posisi = decodedToken?.role || null;
+            // console.log(decodedToken);
+            // console.log(posisi);
+        } catch (error) {   
             console.error('Failed to decode token:', error);
         }
     }
@@ -27,7 +30,7 @@ export default async function SekolahCentre() {
     if (!res.ok) {
         return <div>Failed to fetch data</div>;
     }
-
+    
     return (
         <main id="sekolah-centre" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="sekolah-centre_title">
@@ -94,23 +97,28 @@ export default async function SekolahCentre() {
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.kelas} </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.tipeMateri} </td>
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {item.materi} </td>
+
                                     <td className="shadow py-3 border-b border-gray-150 px-5">
                                         <a href="/activity/sekolah-centre/info" className="text-primary hover:text-secondary">
                                             Lihat Sekolah
                                         </a>
                                     </td>
+
                                     <td className="shadow py-3 border-b border-gray-150 px-5">
                                         <a href={`/sekolah-centre/student-list-${item.id}`} className="text-primary hover:text-secondary">
                                             Absensi Murid
                                         </a>
                                     </td>
+
                                     {posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) && (
                                         <>
                                             <td className="shadow py-3 border-b border-gray-150 px-5">
                                                 <a href={`/activity/sekolah-centre/edit-${item.id}`} className="text-primary hover:text-secondary">
-                                                    Edit
+                                                    {/* Edit */}
+                                                    <PenIcon/>
                                                 </a>
                                             </td>
+                                            
                                             <td className="shadow py-3 border-b border-gray-150 px-5">
                                                 <form action="">
                                                     <button type="submit" className="text-primary hover:text-secondary">
@@ -125,14 +133,26 @@ export default async function SekolahCentre() {
                         </tbody>
                     </table>
                 </div>
+                
+                {posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) && (
+                    <div id="sekolah-centre_button_container" className="flex justify-end">
+                        <a href="/activity/sekolah-centre/add">
+                            <button className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                Tambah Sekolah
+                            </button>
+                        </a>
+                    </div>
+                )}
 
-                <div id="sekolah-centre_button_container" className="flex justify-end">
+                in
+
+                {/* <div id="sekolah-centre_button_container" className="flex justify-end">
                     <a href="/activity/sekolah-centre/add">
                         <button className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
                             Tambah Sekolah
                         </button>
                     </a>
-                </div>
+                </div> */}
             </div>
         </main>
     );

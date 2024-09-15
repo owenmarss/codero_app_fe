@@ -3,7 +3,7 @@ export type submenu = {
     path: string;
 };
 
-export type SideNavItem = {
+export type SidebarItemDataTypes = {
     title: string;
     path: string;
     icon: JSX.Element;

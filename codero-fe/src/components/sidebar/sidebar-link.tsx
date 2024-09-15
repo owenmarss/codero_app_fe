@@ -1,9 +1,12 @@
+// React Hooks
 "use client"
 import { useState, useEffect } from 'react';
 import ArrowDownSidebar from '../../../public/icons/arrow-down-sidebar';
-import { SideNavItem, submenu } from '../types/sidebar';
 
-export default function DropdownLink(data: SideNavItem) {
+// Import Sidebar Data Types
+import { submenu, SidebarItemDataTypes } from '../type/sidebar-type';
+
+export default function SidebarLink(data: SidebarItemDataTypes) {
     const [submenuVisible, setSubmenuVisible] = useState(false);
 
     const toggleSubmenu = () => {
@@ -11,12 +14,6 @@ export default function DropdownLink(data: SideNavItem) {
     };
 
     useEffect(() => {
-        // Hide saat load
-        // const dashboardLinkSub = document.querySelector("#dashboard_link_sub");
-        // const dashboardArrow = document.querySelector("#dashboard_arrow");
-        // if (dashboardLinkSub && dashboardArrow) {
-        //     dashboardLinkSub.classList.add('hidden');
-        // }
         setSubmenuVisible(false);
     }, []); // Run hanya sekali saat load
 
@@ -34,7 +31,6 @@ export default function DropdownLink(data: SideNavItem) {
                         <ArrowDownSidebar id="dashboard_arrow" className={`text-gray-400 group-hover:text-primary duration-500 ${submenuVisible ? 'rotate-180' : ''}`}/>
                     </button>
                 }
-
             </div>
 
             {data.submenu && 

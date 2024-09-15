@@ -1,19 +1,10 @@
-// import HomeIcon from "../../../public/icons/home-icon";
-// import ArrowDownSidebar from "../../../public/icons/arrow-down-sidebar";
-// import ScheduleIcon from "../../../public/icons/schedule-icon";
-// import ActivityIcon from "../../../public/icons/activity-icon";
-// import HistoryIcon from "../../../public/icons/history-icon";
-// import NotificationIcon from "../../../public/icons/notification-icon";
-
-// import { HomeIcon, ScheduleIcon, ActivityIcon, HistoryIcon, NotificationIcon } from "../../../public/icons/icons";
-
 // Hero Icons
 import { HomeIcon, ScheduleIcon, ActivityIcon, HistoryIcon, NotificationIcon } from "../../../public/icons/hero-icons";
 
-// Sidebar Data Types
-import { SideNavItem } from "../types/sidebar";
+// Import Sidebar Data Types
+import { SidebarItemDataTypes } from "../type/sidebar-type";
 
-export const SIDENAV_ITEMS: SideNavItem[] = [
+export const SidebarItems: SidebarItemDataTypes[] = [
     {
         title: 'Dashboard',
         path: '/dashboard',

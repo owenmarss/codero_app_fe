@@ -20,9 +20,10 @@ export default function Resources() {
                             </div>
 
                             <div id="resources-coding_content_button" className="flex justify-end">
-                                <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
+                                <a href="/activity/resources/coding" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                             </div>
                         </div>
+
                         <div id="resources_coding_content" className="flex flex-col w-72 pt-3 pb-7 px-4 gap-6 border-2 border-primary rounded-lg shadow-lg drop-shadow-2xl">
                             <div id="resources_coding_content_text" className="flex flex-col">
                                 <h1 className="text-black font-semibold text-xl"> Younger 1 - [SD 3-4] </h1>
@@ -34,6 +35,7 @@ export default function Resources() {
                                 <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                             </div>
                         </div>
+
                         <div id="resources_coding_content" className="flex flex-col w-72 pt-3 pb-7 px-4 gap-6 border-2 border-primary rounded-lg shadow-lg drop-shadow-2xl">
                             <div id="resources_coding_content_text" className="flex flex-col">
                                 <h1 className="text-black font-semibold text-xl"> Younger 1 - [SD 3-4] </h1>
@@ -45,6 +47,7 @@ export default function Resources() {
                                 <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                             </div>
                         </div>
+
                         <div id="resources_coding_content" className="flex flex-col w-72 pt-3 pb-7 px-4 gap-6 border-2 border-primary rounded-lg shadow-lg drop-shadow-2xl">
                             <div id="resources_coding_content_text" className="flex flex-col">
                                 <h1 className="text-black font-semibold text-xl"> Younger 1 - [SD 3-4] </h1>
@@ -56,6 +59,7 @@ export default function Resources() {
                                 <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                             </div>
                         </div>
+
                         <div id="resources_coding_content" className="flex flex-col w-72 pt-3 pb-7 px-4 gap-6 border-2 border-primary rounded-lg shadow-lg drop-shadow-2xl">
                             <div id="resources_coding_content_text" className="flex flex-col">
                                 <h1 className="text-black font-semibold text-xl"> Younger 1 - [SD 3-4] </h1>
@@ -67,6 +71,10 @@ export default function Resources() {
                                 <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="pt-2 pb-3 flex justify-end">
+                        <a href="" className="text-primary tracking-wider font-medium hover:underline"> View All... </a>
                     </div>
                 </div>
 
