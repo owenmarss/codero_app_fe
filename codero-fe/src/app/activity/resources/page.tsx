@@ -73,8 +73,8 @@ export default function Resources() {
                         </div>
                     </div>
 
-                    <div className="pt-2 pb-3 flex justify-end">
-                        <a href="" className="text-primary tracking-wider font-medium hover:underline"> View All... </a>
+                    <div className="pt-2 pb-1 flex justify-end">
+                        <a href="" className="text-primary tracking-wider font-medium hover:text-secondary hover:underline duration-500"> View All... </a>
                     </div>
                 </div>
 

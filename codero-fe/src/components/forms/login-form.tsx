@@ -46,7 +46,6 @@ export default function LoginForm() {
 
     return (
         <form id="login_form" className="flex flex-col gap-3" onSubmit={onSubmit}>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
             <div id="login_email_container" className="w-96">
                 <input
                     type="email"
@@ -86,17 +85,14 @@ export default function LoginForm() {
                 </div>
             </div>
 
-            <div
-                id="login_error_result"
-                className="flex items-center justify-center hidden"
-            >
-                <h1> Judul Error </h1>
-                <h1 className="ml-5"> Alasan Error </h1>
-            </div>
+            {error && (
+                <p className="text-red-600 text-center">{error}</p>
+            )
+            }
 
             <div
                 id="login_button_container"
-                className="flex flex-col gap-2 pt-5"
+                className={`flex flex-col gap-2 ${error ? "" : "pt-5"}`}
             >
                 <div id="login_button_submit" className="flex justify-center">
                     <button

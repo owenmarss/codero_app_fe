@@ -3,6 +3,7 @@
 // Image
 import Image from "next/image";
 import LogoCodero from "../../../public/images/logo_codero2.png";
+import loadingIcon from "../../../public/images/loading-black.png";
 
 // Sidebar
 import { SidebarItems } from "./sidebar-data";
@@ -39,6 +40,8 @@ export default function Navigation({
                 console.error("An unexpected error occurred:", error);
             }
             setLoading(false);
+            setProfileVisible(false);
+            setLogoutOpen(false);
         }
         checkToken();
         console.log(loading);
@@ -98,13 +101,15 @@ export default function Navigation({
         );
     }
     
-    if (loading) {
-        return (
-            <>
-                <h1> loading... </h1>
-            </>
-        )
-    }
+    // if (loading) {
+    //     return (
+    //         <>  
+    //             <div className="flex justify-center items-center h-screen">
+    //                 <h1 className="text-2xl font-semibold">Loading...</h1>
+    //             </div>
+    //         </>
+    //     )
+    // }
 
     return (
         <main className="flex">
@@ -166,9 +171,16 @@ export default function Navigation({
                         </div>
                     </div>
                 </main>
+
+                {loading && (
+                    <div className="animate-pulse flex flex-col gap-4 justify-center items-center h-screen">
+                        <Image src={loadingIcon} alt="Loading" className="w-11 h-11 animate-spin"/>
+                        <h1 className="text-2xl font-medium tracking-wide">Loading...</h1>
+                    </div>
+                )}
                 
                 {logoutOpen && (
-                    <div id="logout-popup" className="z-10 bg-gray-100 shadow-xl shadow-black-600 drop-shadow-lg flex flex-col gap-2 justify-between absolute w-96 pb-16 rounded-lg top-0 left-1/2 -translate-x-1/2 translate-y-full">
+                    <div id="logout-popup" className="z-50 bg-gray-100 shadow-xl shadow-black-600 drop-shadow-xl flex flex-col gap-2 justify-between absolute w-96 pb-12 rounded-lg top-0 left-1/2 -translate-x-1/2 translate-y-full">
                         <span className="flex justify-end items-center bg-gray-300">
                             <button 
                                 type="button"
@@ -181,7 +193,7 @@ export default function Navigation({
 
                         <h1 className="font-semibold text-lg text-center pt-5">Are you sure you want to log out?</h1>
 
-                        <div className="flex gap-5 justify-center items-center">
+                        <div className="flex gap-5 justify-center items-center pt-0.5">
                             <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded-md font-semibold tracking-wide hover:underline hover:bg-red-700 duration-500">Yes, I&apos;m sure!</button>
                             <button onClick={closePopup} className="bg-primary text-white font-semibold px-4 py-2 rounded-md tracking-wide hover:underline duration-500 hover:bg-secondary"> Cancel </button>
                         </div>
@@ -190,7 +202,6 @@ export default function Navigation({
                 
                 {children}
             </div>
-
         </main>
     )
 }

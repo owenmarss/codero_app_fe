@@ -26,12 +26,19 @@ export async function middleware(req: NextRequest) {
             "/schedule",
             "/activity",
             "/logout",
-            "/notification",
+            "/message",
         ];
     }
     else if (posisi && ["Teacher"].includes(posisi)) {
         allowedPath = [
-            "/dashboard", "/logout"];
+            "/dashboard",
+            "/schedule",
+            "/activity",
+            "/history",
+            "/message",
+            "/profile",
+            "/logout"
+        ];
     }
     else if (posisi && ["Business Digital"].includes(posisi)) {
         allowedPath = [
@@ -39,8 +46,8 @@ export async function middleware(req: NextRequest) {
             "/schedule",
             "/activity/:path*",
             "/history",
+            "/message",
             "/logout",
-            "/notification",
         ];
     }
 

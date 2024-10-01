@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production', // use secure cookies in production (HTTPS)
                 path: "/",
-                maxAge: 60 * 60, // 24 hours
+                maxAge: 24 * 60 * 60, // 24 hours
             });
 
             // Return a success response

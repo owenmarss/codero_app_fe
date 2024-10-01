@@ -144,8 +144,6 @@ export default async function SekolahCentre() {
                     </div>
                 )}
 
-                in
-
                 {/* <div id="sekolah-centre_button_container" className="flex justify-end">
                     <a href="/activity/sekolah-centre/add">
                         <button className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">

@@ -1,15 +1,28 @@
+import { cookies } from "next/headers";
 import EnvelopeIcon from "../../../public/icons/envelope-icon";
 import Notification2Icon from "../../../public/icons/notification2-icon";
 import PenIcon from "../../../public/icons/pen-icon";
 import RocketLaunch from "../../../public/icons/rocket-launch";
 import Schedule2Icon from "../../../public/icons/schedule2-icon";
+import jwt from "jsonwebtoken";
 
 export default async function Dashboard() {
-    const res = await fetch("/api/getOneUser", {
+    const cookieStore = cookies();
+    const token = cookieStore.get('token');
+    let id = null;
+
+    if(token) {
+        const decodedToken: any = jwt.decode(token?.value);
+        id = decodedToken?.id;
+    }
+
+    const res = await fetch(`http://127.0.0.1:8000/api/users/${id}`, {
         method: "GET",
     });
-    console.log(res);
+    const data = await res.json();
+    console.log(data);
     
+    const title = data.jenisKelamin === 'Laki-laki' ? 'Mr.' : 'Ms.';
 
     return (
         <main id="dashboard" className="pt-7 pb-10 px-6 flex flex-col gap-5">
@@ -22,16 +35,16 @@ export default async function Dashboard() {
                     <div id="dashboard_card_user_top" className="flex items-center justify-between px-4">
                         <div className="flex flex-col w-3/4">
                             <h1 className="text-sm font-semibold"> Profile </h1>
-                            <h1 className="text-xs text-gray-400 font-medium"> ID 123456789012345 </h1>
+                            <h1 className="text-xs text-gray-400 font-medium"> ID: <b className="font-semibold text-secondary"> {data.userId} </b> </h1>
                         </div>
 
                         <div className="flex items-center gap-2">
-                            <a href="/notification">
-                                <Notification2Icon className="text-black hover:text-primary duration-300 cursor-pointer"/>
+                            <a href="/message">
+                                <Notification2Icon className="text-black hover:text-secondary duration-500 cursor-pointer"/>
                             </a>
 
                             <a href="/profile">
-                                <PenIcon className="text-black hover:text-primary duration-300 cursor-pointer"/>
+                                <PenIcon className="text-black hover:text-secondary duration-500 cursor-pointer"/>
                             </a>
                         </div>
                     </div>
@@ -41,11 +54,11 @@ export default async function Dashboard() {
                             Foto
                         </div>
                     </div>
-
+                    
                     <div id="dashboard_card_user_bottom" className="flex flex-col items-center gap-1">
-                        <h1 className="font-semibold text-base"> Mr. Owen </h1>
-                        <h2 className="text-secondary font-bold text-sm"> Teacher (Part-Time) </h2>
-                        <h3 className="bg-secondary mt-1 px-4 py-1.5 rounded text-white uppercase font-bold tracking-wider text-sm"> Jabodetabek </h3>
+                        <h1 className="font-semibold text-base"> {title} {data.namaDepan} </h1>
+                        <h2 className="text-secondary font-bold text-sm"> {data.posisi} ({data.divisi}) </h2>
+                        <h3 className="bg-secondary mt-1 px-4 py-1.5 rounded text-white uppercase font-bold tracking-wider text-sm"> {data.cabang} </h3>
                     </div>
                 </div>
 
@@ -53,7 +66,7 @@ export default async function Dashboard() {
                     <div className="bg-secondary absolute h-full w-1.5 overflow-hidden rounded-md top-0 left-0 text-secondary blur-[1.5px]"> </div>
                     <div id="dashboard_card_reminder_text" className="flex flex-col pl-4">
                         <h1 className="uppercase text-xs tracking-wider font-light"> Reminder </h1>
-                        <h2 className="text-lg tracking-wider font-medium"> Hello, <b className="font-bold"> Mr. Owen</b>! </h2>
+                        <h2 className="text-lg tracking-wider font-medium"> Hello, <b className="font-bold"> {title} {data.namaDepan}</b>! </h2>
                         <h2 className="text-sm pt-1"> Selamat hari Senin! Jangan lupa menjaga kesehatan nya yah mr! </h2>
                     </div>
                 </div>
@@ -202,7 +215,7 @@ export default async function Dashboard() {
                 </div>
 
                 <div id="dashboard_inbox_link" className="flex justify-end mt-1">
-                    <a href="/notification" className="text-primary font-semibold hover:underline hover:text-secondary duration-300"> Lihat Semua Pesan </a>
+                    <a href="/message" className="text-primary font-semibold hover:underline hover:text-secondary duration-300"> Lihat Semua Pesan </a>
                 </div>
             </div>
         </main>

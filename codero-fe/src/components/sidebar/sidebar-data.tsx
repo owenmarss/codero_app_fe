@@ -43,8 +43,13 @@ export const SidebarItems: SidebarItemDataTypes[] = [
         ],
     }, 
     {
-        title: 'Notification',
-        path: '/notification',
-        icon: <NotificationIcon className="text-gray-400 group-hover:text-primary duration-300"/>
+        title: 'Messages',
+        path: '/message',
+        icon: <NotificationIcon className="text-gray-400 group-hover:text-primary duration-300"/>,
+        submenu: true,
+        subMenuItems: [
+            { title: 'Write Message', path: '/message/write' },
+            { title: 'Message Inbox', path: '/message' },
+        ],
     }, 
 ]
