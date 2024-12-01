@@ -58,7 +58,6 @@ export default function Resources() {
         <main id="resources" className="pt-7 pb-10 px-6 flex flex-col gap-5">
             <div id="resources_title">
                 <h1 className="text-2xl font-bold text-primary">Resources</h1>
-                <h1> {curriculum?.robotic.total} test </h1>
             </div>
 
             <div id="resources_content" className="flex flex-col gap-5">
@@ -77,14 +76,14 @@ export default function Resources() {
                                 </div>
 
                                 <div id="resources-coding_content_button" className="flex justify-end">
-                                    <a href="" className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
+                                    <a href={`/activity/resources/coding/${item.id}`} className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     <div className="pt-2 pb-1 flex justify-end">
-                        <a href="" className="text-primary tracking-wider font-medium hover:text-secondary hover:underline duration-500"> View All... </a>
+                        <a href="/activity/resources/coding" className="text-primary tracking-wider font-medium hover:text-secondary hover:underline duration-500"> View All... </a>
                     </div>
                 </div>
 
@@ -103,14 +102,14 @@ export default function Resources() {
                                 </div>
 
                                 <div id="resources-robotic_content_button" className="flex justify-end">
-                                    <a href={`/activity/resources/coding/${item.id}`} className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
+                                    <a href={`/activity/resources/robotic/${item.id}`} className="text-sm tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md"> Lihat Detail</a>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     <div className="pt-2 pb-1 flex justify-end">
-                        <a href="" className="text-primary tracking-wider font-medium hover:text-secondary hover:underline duration-500"> View All... </a>
+                        <a href="/activity/resources/robotic" className="text-primary tracking-wider font-medium hover:text-secondary hover:underline duration-500"> View All... </a>
                     </div>
                 </div>
             </div>
