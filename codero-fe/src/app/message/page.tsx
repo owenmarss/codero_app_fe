@@ -66,6 +66,17 @@ export default function Message() {
         getAllMessages(page);
     }
 
+    function convertDate(dateStr: string) {
+        const date = new Date(dateStr);
+
+        const day = date.getDate();
+        const month = date.toLocaleString("default", { month: "long" });
+        const year = date.getFullYear();
+
+        const formattedDate = `${day} ${month} ${year}`;
+        return formattedDate;
+    }
+
     useEffect(() => {
         getAllMessages();
     }, []);
@@ -154,7 +165,7 @@ export default function Message() {
                                     </h1>
 
                                     <h1 className="font-light text-gray-500 text-sm truncate w-[33%] pr-5 group-hover:text-white">
-                                        {messageData.message.send_time ||
+                                        {messageData.message.content ||
                                             "Empty message content"}
                                     </h1>
                                 </div>
@@ -180,7 +191,7 @@ export default function Message() {
 
                     <div
                         id="message_popup_content"
-                        className="flex flex-col gap-3 px-5 pt-3 pb-10"
+                        className="flex flex-col gap-[1.20rem] px-5 pt-3 pb-10"
                     >
                         <div
                             id="message_popup_content_from"
@@ -197,7 +208,7 @@ export default function Message() {
                                           .sender.last_name
                                     : "Unknown"}
                                 <p> - </p>
-                                <p className="hover:text-primary cursor-pointer hover:underline underline-offset-2">
+                                <p className="font-medium italic hover:text-primary cursor-pointer hover:underline underline-offset-2">
                                     {messages
                                         ? messages.messages[detailMessage]
                                               .message.sender.email
@@ -212,14 +223,33 @@ export default function Message() {
                         >
                             <h1 className="font-semibold text-lg">
                                 {" "}
-                                Tanggal:{" "}
+                                Tanggal & Waktu:{" "}
                             </h1>
-                            <h1 className="font-light text-gray-500">
-                                {messages
+                            <div className="font-light text-gray-500 flex items-center gap-[0.65rem]">
+                                {/* {messages
                                     ? messages.messages[detailMessage].message
                                           .send_date
-                                    : "No Date"}
-                            </h1>
+                                    : "No Date"} */}
+
+                                <h1 className="font-light text-gray-500">
+                                    {convertDate( messages ? messages.messages[detailMessage].message.send_date : "")}
+                                </h1>
+
+                                <h1 className="font-light text-gray-500"> - </h1>
+
+                                <div className="flex gap-1">
+                                    <h1 className="font-light text-gray-500">
+                                        {messages
+                                            ? messages.messages[detailMessage].message
+                                                .send_time.slice(0, 5)
+                                            : "No Time"}
+                                    </h1>
+
+                                    <h2 className="font-light text-gray-500"> WIB </h2>
+                                </div>
+
+
+                            </div>
                         </div>
 
                         <div
@@ -255,6 +285,16 @@ export default function Message() {
                                 {/* {messagesData[0].message.send_time ||
                                     "Empty message content"}{" "} */}
                             </h1>
+                        </div>
+
+                        <div className="flex justify-end pt-5">
+                            <button 
+                                type="button" 
+                                onClick={() => setShowDetailMessage(false)}
+                                className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red-600 hover:bg-red-700 hover:underline duration-300 px-5 py-2 rounded-md"
+                            >
+                                Tutup
+                            </button>
                         </div>
                     </div>
                 </div>
