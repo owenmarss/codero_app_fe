@@ -4,7 +4,7 @@ interface PaginationRightProps {
     className?: string;
 }
 
-function PaginationRight({ className }: PaginationRightProps) {
+function PaginationRight({ className }: PaginationRightProps, getAllMessages: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -6,19 +6,17 @@ export default async function SekolahCentre() {
     const cookieStore = cookies();
     const token = cookieStore.get('token'); // Replace 'token' with your actual cookie name
 
-    let posisi: string | null = null;
+    let position: string | null = null;
     if (token?.value) {
         try {
             const decodedToken: any = jwt.decode(token.value);
-            posisi = decodedToken?.role || null;
-            // console.log(decodedToken);
-            // console.log(posisi);
+            position = decodedToken?.position || null;
         } catch (error) {   
             console.error('Failed to decode token:', error);
         }
     }
 
-    const res = await fetch('http://127.0.0.1:8000/api/schoolcentres', {
+    const res = await fetch('http://127.0.0.1:8000/api/partners', {
         cache: 'no-cache',
         headers: {
             'Authorization': `Bearer ${token?.value}` // Ensure you are passing the value of the cookie
@@ -68,7 +66,7 @@ export default async function SekolahCentre() {
             </div>
 
             <div id="sekolah-centre_content" className="flex flex-col gap-10">
-                <div id="sekolah-centre_table_container" className="overflow-x-scroll overflow-y-scroll h-fit max-h-72 shadow-lg drop-shadow rounded-lg">
+                <div id="sekolah-centre_table_container" className="overflow-x-scroll overflow-y-scroll pb-3 h-fit max-h-72 shadow-lg drop-shadow rounded-lg">
                     <table id="sekolah-centre_table" className="table-auto w-full shadow-md rounded min-w-max">
                         <thead>
                             <tr className="bg-blue-200 text-sm">
@@ -81,7 +79,7 @@ export default async function SekolahCentre() {
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Kelas </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Tipe Materi </th>
                                 <th className="font-bold shadow border-t border-gray-150 py-3 px-5"> Materi </th>
-                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) ? 4 : 3}> Action </th>
+                                <th className="font-bold shadow border-t border-gray-150 py-3 px-5" colSpan={position && ['Head', 'HRD', 'Business Development'].includes(position) ? 4 : 3}> Action </th>
                             </tr>
                         </thead>
 
@@ -89,14 +87,16 @@ export default async function SekolahCentre() {
                             {data.map((item: any, index: any) => (
                                 <tr key={item.id} className="text-center text-xs hover:bg-gray-200 duration-300">
                                     <td className="shadow py-3 border-b border-gray-150 px-5"> {index + 1} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.nama} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.jenis} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.alamat} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.daerah} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.jenjang} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.kelas} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.tipeMateri} </td>
-                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.materi} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.name} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.category} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.address} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.region} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.level ? item.level : "---"} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.grade ? item.grade : "---"} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.curriculum ? item.curriculum.curriculum_type : "---"} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.curriculum ? item.curriculum.curriculum_title : "---"} </td>
+                                    {/* <td className="shadow py-3 border-b border-gray-150 px-5"> {item.tipeMateri} </td>
+                                    <td className="shadow py-3 border-b border-gray-150 px-5"> {item.materi} </td> */}
 
                                     <td className="shadow py-3 border-b border-gray-150 px-5">
                                         <a href="/activity/sekolah-centre/info" className="text-primary hover:text-secondary">
@@ -110,7 +110,7 @@ export default async function SekolahCentre() {
                                         </a>
                                     </td>
 
-                                    {posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) && (
+                                    {position && ['Head', 'HRD', 'Business Development'].includes(position) && (
                                         <>
                                             <td className="shadow py-3 border-b border-gray-150 px-5">
                                                 <a href={`/activity/sekolah-centre/edit-${item.id}`} className="text-primary hover:text-secondary">
@@ -134,7 +134,7 @@ export default async function SekolahCentre() {
                     </table>
                 </div>
                 
-                {posisi && ['Head', 'HRD', 'Business Development'].includes(posisi) && (
+                {position && ['Head', 'HRD', 'Business Development'].includes(position) && (
                     <div id="sekolah-centre_button_container" className="flex justify-end">
                         <a href="/activity/sekolah-centre/add">
                             <button className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">

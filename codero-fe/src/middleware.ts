@@ -7,29 +7,31 @@ export async function middleware(req: NextRequest) {
     const cookieStore = cookies();
     const token = cookieStore.get("token")?.value;
 
+    // isLogin nya salah karena harusnya 
     let isLogin = token ? true : false;
     let allowedPath: any = [];
-    let posisi: string | null = null;
+    let position: string | null = null;
 
     if (token) {
         try {
             const decodedToken: any = jwt.decode(token);
-            posisi = decodedToken?.role || null;
+            position = decodedToken?.position || null;
         } catch (error) {
             console.error("Failed to decode token:", error);
         }
     }
 
-    if (posisi && posisi == "Head") {
+    if (position && position == "Head") {
         allowedPath = [
             "/dashboard",
             "/schedule",
             "/activity",
+            "/history",
             "/logout",
             "/message",
         ];
     }
-    else if (posisi && ["Teacher"].includes(posisi)) {
+    else if (position && ["Teacher"].includes(position)) {
         allowedPath = [
             "/dashboard",
             "/schedule",
@@ -40,7 +42,7 @@ export async function middleware(req: NextRequest) {
             "/logout"
         ];
     }
-    else if (posisi && ["Business Digital"].includes(posisi)) {
+    else if (position && ["Business Digital"].includes(position)) {
         allowedPath = [
             "/dashboard",
             "/schedule",

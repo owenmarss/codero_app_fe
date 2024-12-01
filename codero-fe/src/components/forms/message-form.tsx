@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Importing the Select component
 import Select, { MultiValue } from "react-select";
@@ -25,7 +25,9 @@ interface OptionType {
 
 export default function MessageForm() {
     // React Select for the recipients input
+    const [allRecipients, setAllRecipients] = useState<MultiValue<OptionType>>([]);
     const [selectedRecipients, setSelectedRecipients] = useState<MultiValue<OptionType>>([]);
+
 
     const recipientsOptions:OptionType[] = [
         { value: "john_doe", label: "John Doe" },
@@ -33,10 +35,37 @@ export default function MessageForm() {
         { value: "michael_jordan", label: "Michael Jordan" },
     ];
 
-    const handleRecipientsChange = (selectedOptions:any) => {
-        setSelectedRecipients(selectedOptions);
+    const handleRecipientsChange = (allOptions:any) => {
+
+        setSelectedRecipients(allOptions);
+ 
     };
     
+    async function getAllRecipients(page: number = 1) {
+        try {
+            const res = await fetch(`/api/getAllRecipient`, {
+                method: "GET",
+            });
+            const data = await res.json();
+
+            let newData:OptionType[] = [];
+            data.forEach((recipient: any) => {
+                newData.push({ value: recipient.id, label: recipient.first_name + " " + recipient.last_name });
+            })
+
+            console.log(recipientsOptions);
+            
+            console.log(newData);
+            
+            setAllRecipients(newData);
+        } catch (error) {
+            console.error("An unexpected error occurred:", error);
+        }
+    }
+
+    useEffect(() => {
+        getAllRecipients();
+    }, []);
 
     // Tiptap editor for the message body input
     const editor = useEditor({
@@ -72,22 +101,13 @@ export default function MessageForm() {
                     id="message_recipients_input"
                     isMulti
                     // Type '{ value: string; label: string; }[]' is not assignable to type 'readonly GroupBase<never>[]'. Property 'options' is missing in type '{value: string; label: string;}'
-                    options={recipientsOptions}
+                    options={allRecipients}
                     onChange={handleRecipientsChange} // Handle selection changes
                     value={selectedRecipients}
                     placeholder="Select or type recipients here..."
                     className="w-fit"
                     classNamePrefix="react-select"
                 />
-                {/* <select
-                    name=""
-                    id="to"
-                    className="text-gray-400 focus:text-black py-2 pl-3 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary w-fit bg-transparent"
-                >
-                    <option value="1">Admin</option>
-                    <option value="2">Teacher</option>
-                    <option value="3">Student</option>
-                </select> */}
             </div>
 
             <div
