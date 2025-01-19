@@ -29,7 +29,7 @@ export default async function RoboticPageByOne({
                 <ol className="list-disc flex flex-col gap-2 px-6">
                     {data.sessions.map((item: any) => (
                         <li key={item.index_session} className="">
-                            <a href="" className="text-secondary tracking-wide font-regular text-base hover:underline">
+                            <a href={`/activity/resources/robotic/${data.id}/session/${item.id}`} className="text-secondary tracking-wide font-regular text-base hover:underline">
                                 {" "}{item.session_title}
                             </a>
                             {/* <h1> {data.id} </h1> */}

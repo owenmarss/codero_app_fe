@@ -29,6 +29,9 @@ export async function middleware(req: NextRequest) {
             "/history",
             "/logout",
             "/message",
+            "/profile",
+            "/user-management",
+            "/transport"
         ];
     }
     else if (position && ["Teacher"].includes(position)) {

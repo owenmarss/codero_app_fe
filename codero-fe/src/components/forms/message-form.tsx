@@ -27,7 +27,7 @@ export default function MessageForm() {
     // React Select for the recipients input
     const [allRecipients, setAllRecipients] = useState<MultiValue<OptionType>>([]);
     const [selectedRecipients, setSelectedRecipients] = useState<MultiValue<OptionType>>([]);
-
+    
 
     const recipientsOptions:OptionType[] = [
         { value: "john_doe", label: "John Doe" },

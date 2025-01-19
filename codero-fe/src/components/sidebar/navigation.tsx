@@ -167,7 +167,7 @@ export default function Navigation({
                         <div id="profile_dropdown" className={`w-40 flex flex-col absolute bg-gray-100 right-0 top-0 mt-10 rounded z-10 shadow-md drop-shadow-md rounded-lg border border-gray-300   ${profileVisible ? "flex" : "hidden"}`}>
                             <a href="/profile" className="pl-2.5 py-2 border-b border-gray-300 font-medium hover:bg-gray-200 hover:underline duration-300"> User Profile </a>
                             <a href="/notification" className="pl-2.5 py-2 border-b border-gray-300 font-medium hover:bg-gray-200 hover:underline duration-300"> Notification </a>
-                            <button type="button" onClick={openPopup} className="flex pl-2.5 py-2 text-red-600 font-medium hover:bg-gray-200 hover:underline duration-300"> Logout </button>
+                            <button type="button" onClick={openPopup} className="flex pl-2.5 py-2 text-red font-medium hover:bg-gray-200 hover:underline duration-300"> Logout </button>
                         </div>
                     </div>
                 </main>
@@ -185,7 +185,7 @@ export default function Navigation({
                             <button 
                                 type="button"
                                 onClick={closePopup}
-                                className="bg-transparent px-2 py-1.5 text-black hover:text-white font-light text-lg hover:bg-red-600 duration-300"
+                                className="bg-transparent px-2 py-1.5 text-black hover:text-white font-light text-lg hover:bg-red duration-300"
                             >
                                 <CloseIcon className="w-6 h-6" />
                             </button>
@@ -194,7 +194,7 @@ export default function Navigation({
                         <h1 className="font-semibold text-lg text-center pt-5">Are you sure you want to log out?</h1>
 
                         <div className="flex gap-5 justify-center items-center pt-0.5">
-                            <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded-md font-semibold tracking-wide hover:underline hover:bg-red-700 duration-500">Yes, I&apos;m sure!</button>
+                            <button onClick={handleLogout} className="bg-red text-white px-4 py-2 rounded-md font-semibold tracking-wide hover:underline hover:bg-red-700 duration-500">Yes, I&apos;m sure!</button>
                             <button onClick={closePopup} className="bg-primary text-white font-semibold px-4 py-2 rounded-md tracking-wide hover:underline duration-500 hover:bg-secondary"> Cancel </button>
                         </div>
                     </div>

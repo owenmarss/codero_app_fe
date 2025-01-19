@@ -58,7 +58,7 @@ export default function Absensi() {
                     </div>
 
                     <div id="absensi_button" className="flex justify-between col-span-3 pt-5">
-                        <button type="reset" className="w-fit text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red-600 hover:bg-red-700 hover:underline duration-300 px-7 py-2 rounded-md">
+                        <button type="reset" className="w-fit text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red hover:bg-red-700 hover:underline duration-300 px-7 py-2 rounded-md">
                             Cancel
                         </button>
 

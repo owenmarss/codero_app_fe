@@ -15,7 +15,15 @@ const config: Config = {
             },
             colors: {
                 "primary" : "#2392ED",
-                "secondary": "#06C3FF"
+                "secondary": "#06C3FF",
+                "red": "#cc1818",
+                "red-secondary": "#ff0000",
+                "green": "#17b169", 
+                "green-secondary": "#32de84",
+                "orange": "#F2994A",
+                "orange-secondary": "#F2C94C",
+                "yellow": "#FCC737",
+                "yellow-secondary": "#FFEB00",
             },
             width: {
                 "right": "calc(100% - 18rem)"

@@ -107,7 +107,7 @@ export default function AddSekolahCentre() {
                     </div>
 
                     <div id="add_sekolah-centre_button" className="col-span-2 flex gap-96 pt-5">
-                        <button type="reset" className="w-fit text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red-600 hover:bg-red-700 hover:underline duration-300 px-10 py-2 rounded-md">
+                        <button type="reset" className="w-fit text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red hover:bg-red-700 hover:underline duration-300 px-10 py-2 rounded-md">
                             Cancel
                         </button>
 

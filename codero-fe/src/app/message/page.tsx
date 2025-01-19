@@ -105,7 +105,7 @@ export default function Message() {
                             type="date"
                             name=""
                             id=""
-                            className="text-base text-gray-500 bg-gray-200 rounded-md px-4 py-2"
+                            className="text-base text-gray-500 bg-white border-[1.5px] rounded-md px-4 py-2"
                         />
                     </div>
 
@@ -117,7 +117,7 @@ export default function Message() {
                             {" "}
                             Status:{" "}
                         </h2>
-                        <select className="text-base text-gray-500 bg-gray-200 rounded-md pl-2 pr-6 py-2">
+                        <select className="text-base text-gray-500 bg-white border-[1.5px] rounded-md pl-2 pr-6 py-2">
                             <option value="">---</option>
                             <option value="Dibaca">Dibaca</option>
                             <option value="Belum Dibaca">Belum Dibaca</option>
@@ -183,7 +183,7 @@ export default function Message() {
                         <button
                             type="button"
                             onClick={() => setShowDetailMessage(false)}
-                            className="bg-transparent px-2 py-1.5 text-black hover:text-white font-light text-lg hover:bg-red-600 duration-300"
+                            className="bg-transparent px-2 py-1.5 text-black hover:text-white font-light text-lg hover:bg-red duration-300"
                         >
                             <CloseIcon className="w-6 h-6" />
                         </button>
@@ -291,7 +291,7 @@ export default function Message() {
                             <button 
                                 type="button" 
                                 onClick={() => setShowDetailMessage(false)}
-                                className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red-600 hover:bg-red-700 hover:underline duration-300 px-5 py-2 rounded-md"
+                                className="text-base tracking-wide font-bold shadow-md drop-shadow text-white bg-red hover:bg-red-700 hover:underline duration-300 px-5 py-2 rounded-md"
                             >
                                 Tutup
                             </button>
