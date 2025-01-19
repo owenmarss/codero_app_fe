@@ -192,7 +192,7 @@ export default async function ScheduleList() {
                                 </div>
                             </div>
 
-                            <div id="schedule_list_features" className="bg-slate-100 border-t-[1.25px] py-3 flex flex-col px-5 gap-3">
+                            <div id="schedule_list_features" className="bg-slate-100 border-t-[1.25px] py-3 flex flex-col px-5 gap-4">
                                 <div id="schedule_list_teachers" className="flex justify-between items-center">
                                     <div>
                                         <h1 className="text-sm font-semibold text-black">
@@ -202,22 +202,25 @@ export default async function ScheduleList() {
 
                                     <div
                                         id="schedule_list_teachers_name"
-                                        className="flex flex-col items-end"
+                                        className="flex flex-col gap-3 items-end"
                                     >
-                                        <h2 className="text-sm font-medium text-primary text-black">
-                                            {/* {item.users?.name} */}
-                                            Owen Marscel
-                                        </h2>
-                                        
-                                        <h2 className="text-sm font-medium text-primary text-black">
-                                            {/* {item.users?.name} */}
-                                            Ary Firmansyah
-                                        </h2>
+                                        {item.users && item.users.length > 0 ? (
+                                            item.users.map((user: any, userIndex: number) => (
+                                                <div key={userIndex} className="flex gap-4 items-center">
+                                                    <h2 className="text-sm font-medium text-primary text-black">
+                                                        {user.first_name} {user.last_name}
+                                                    </h2>
 
-                                        <h2 className="text-sm font-medium text-primary text-black">
-                                            {/* {item.users?.name} */}
-                                            Ignatius Surya Wijaya
-                                        </h2>
+                                                    {/* <button className="text-sm font-semibold text-white bg-red hover:bg-red-secondary hover:underline duration-300 px-2 py-0.5 rounded">
+                                                        x
+                                                    </button> */}
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <h2 className="text-sm font-medium text-red text-black">
+                                                Tidak ada pengajar yang terdaftar
+                                            </h2>
+                                        )}
                                     </div>
                                 </div>
 
@@ -232,10 +235,28 @@ export default async function ScheduleList() {
                                         </select>
                                     </div> */}
 
-                                    <div className="flex justify-end">
-                                        <button className="text-sm font-semibold text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
-                                            Assign
-                                        </button>
+                                    <div className="flex justify-between items-center">
+                                        <select name="" id="" className="text-sm text-gray-500 bg-white border-[1.5px] rounded-md pl-2 pr-10 py-2">
+                                            <option value=""> Masukan nama </option>
+                                        </select>
+
+                                        <div className="flex gap-5">
+                                            <button className="text-sm font-semibold text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                                Assign
+                                            </button>
+
+                                            <button className="text-sm font-semibold text-white bg-red hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                                Unassign
+                                            </button>
+
+                                            <button className="text-sm font-semibold text-white bg-orange hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                                Edit
+                                            </button>
+
+                                            <button className="text-sm font-semibold text-white bg-red hover:bg-red-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                                Delete
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

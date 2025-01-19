@@ -52,7 +52,7 @@ export default function LoginForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="shadow-sm shadow-gray-400 rounded-md pl-2 py-2 text-base bg-gray-200 w-full"
+                    className="shadow-sm shadow-gray-200 rounded-md pl-2 py-2 text-base bg-white border-[1.5px] w-full"
                 />
             </div>
 
@@ -62,7 +62,7 @@ export default function LoginForm() {
                     value={password}
                     placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
-                    className="shadow-sm shadow-gray-400 rounded-md pl-2 py-2 text-base bg-gray-200 w-full"
+                    className="shadow-sm shadow-gray-200 rounded-md pl-2 py-2 text-base bg-white border-[1.5px] w-full"
                 />
                 <div className="absolute top-0 right-0 py-2 mr-2">
                     <button
