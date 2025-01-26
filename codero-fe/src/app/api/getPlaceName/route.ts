@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
         // Step 2: Extract coordinates from the expanded URL
         const coordinates = extractCoordinates(fullUrl);
         if (!coordinates) {
-            console.log("sini");
+            // console.log("sini");
 
             return NextResponse.json(
                 { error: "Coordinates not found in link" },
@@ -32,11 +32,14 @@ export async function POST(request: NextRequest) {
             `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinates}&key=${GOOGLE_MAPS_API_KEY}`
         );
         const dataMap = await response.json();
-        console.log(dataMap.results[0]);
+        // console.log(dataMap.results[0]);
 
         if (dataMap.results && dataMap.results.length > 0) {
             return NextResponse.json(
-                { placeName: dataMap.results[0].formatted_address },
+                {
+                    placeName: dataMap.results[0].formatted_address,
+                    coordinates,
+                },
                 { status: 200 }
             );
         }

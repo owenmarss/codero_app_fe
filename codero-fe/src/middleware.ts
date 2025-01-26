@@ -31,7 +31,8 @@ export async function middleware(req: NextRequest) {
             "/message",
             "/profile",
             "/user-management",
-            "/transport"
+            "/transport",
+            "/payroll"
         ];
     }
     else if (position && ["Teacher"].includes(position)) {

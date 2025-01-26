@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import PrivateTransportForm from "@/components/forms/private-transport-form";
+import PublicTransportForm from "@/components/forms/public-transport-form";
 
 export default async function Transport({
     params,
@@ -31,7 +32,7 @@ export default async function Transport({
             },
         }
     ).then((res) => res.json());
-    console.log(data);
+    // console.log(data);
 
     function convertDate(dateStr: string) {
         const date = new Date(dateStr);
@@ -178,6 +179,7 @@ export default async function Transport({
                 </div>
 
                 <PrivateTransportForm />
+                {/* <PublicTransportForm /> */}
             </div>
         </main>
     );

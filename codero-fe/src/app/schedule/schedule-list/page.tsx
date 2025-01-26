@@ -42,7 +42,7 @@ export default async function ScheduleList() {
             >
                 <div
                     id="schedule_list_filter_day"
-                    className="flex justify-between items-center gap-4"
+                    className="flex items-center gap-2"
                 >
                     <h2 className="text-lg font-semibold text-black">
                         {" "}
@@ -57,6 +57,30 @@ export default async function ScheduleList() {
                         <option value="Friday">Jumat</option>
                         <option value="Saturday">Sabtu</option>
                         <option value="Sunday">Minggu</option>
+                    </select>
+                </div>
+
+                <div id="schedule_list_filter_session" className="flex items-center gap-2">
+                    <h2 className="text-lg font-semibold text-black">
+                        {" "}
+                        Jenis Sesi:{" "}
+                    </h2>
+                    <select className="text-base text-gray-500 bg-white border-[1.5px] rounded-md pl-2 pr-10 py-2">
+                        <option value="">---</option>
+                        <option value="Onsite">Onsite</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+
+                <div id="schedule_list_filter_curriculum" className="flex items-center gap-2">
+                    <h2 className="text-lg font-semibold text-black">
+                        {" "}
+                        Jenis Kurikulum:{" "}
+                    </h2>
+                    <select className="text-base text-gray-500 bg-white border-[1.5px] rounded-md pl-2 pr-10 py-2">
+                        <option value="">---</option>
+                        <option value="Coding">Coding</option>
+                        <option value="Robotic">Robotic</option>
                     </select>
                 </div>
 
@@ -241,17 +265,19 @@ export default async function ScheduleList() {
                                         </select>
 
                                         <div className="flex gap-5">
-                                            <button className="text-sm font-semibold text-white bg-primary hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                            <button className="text-sm font-semibold text-white bg-green hover:bg-green-secondary hover:underline duration-300 px-5 py-2 rounded-md">
                                                 Assign
                                             </button>
 
-                                            <button className="text-sm font-semibold text-white bg-red hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
+                                            <button className="text-sm font-semibold text-white bg-red hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md mr-10">
                                                 Unassign
                                             </button>
-
-                                            <button className="text-sm font-semibold text-white bg-orange hover:bg-secondary hover:underline duration-300 px-5 py-2 rounded-md">
-                                                Edit
-                                            </button>
+                                            
+                                            <a href="/schedule/edit">
+                                                <button className="text-sm font-semibold text-white bg-orange hover:bg-yellow hover:underline duration-300 px-5 py-2 rounded-md">
+                                                    Edit
+                                                </button>
+                                            </a>
 
                                             <button className="text-sm font-semibold text-white bg-red hover:bg-red-secondary hover:underline duration-300 px-5 py-2 rounded-md">
                                                 Delete

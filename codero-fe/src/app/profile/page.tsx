@@ -440,6 +440,13 @@ export default function Profile() {
                     id="profile_action"
                     className="flex justify-end gap-5 pt-5"
                 >
+                    <a 
+                        href="/profile/my-tax"
+                        className="bg-orange text-white font-bold flex items-center gap-2 pl-2 pr-3 rounded-md tracking-wide hover:bg-yellow hover:underline hover:shadow-md hover:drop-shadow duration-300"
+                    >
+                        PPH 21 Tax
+                    </a>
+
                     <a
                         href="/profile/change-password"
                         className="bg-blue-950 text-white font-bold flex items-center gap-2 pl-2 pr-3 rounded-md tracking-wide hover:bg-blue-900 hover:underline hover:shadow-md hover:drop-shadow duration-300"

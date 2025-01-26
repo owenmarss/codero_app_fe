@@ -55,7 +55,7 @@ export const SidebarItems: SidebarItemDataTypes[] = [
         icon: <ActivityIcon className="text-gray-400 group-hover:text-primary duration-300"/>,
         submenu: true,
         subMenuItems: [
-            { title: 'Attendance Detail', path: '/payroll/payroll' },
+            { title: 'Attendance Detail', path: '/payroll' },
             { title: 'Count & Create Payroll', path: '/payroll/payslip' },
             { title: 'Payroll Detail', path: '/payroll/payslip' },
         ],

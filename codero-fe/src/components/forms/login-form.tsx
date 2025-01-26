@@ -86,7 +86,7 @@ export default function LoginForm() {
             </div>
 
             {error && (
-                <p className="text-red-600 text-center">{error}</p>
+                <p className="text-red text-center">{error}</p>
             )
             }
 
