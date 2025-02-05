@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.5",
     "@tiptap/extension-text-align": "^2.7.2",
     "@tiptap/extension-underline": "^2.7.2",
     "@tiptap/pm": "^2.7.2",
